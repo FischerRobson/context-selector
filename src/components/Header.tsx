@@ -1,42 +1,42 @@
-import { Fragment } from 'react'
-import { Menu, Popover, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { Menu, Popover, Transition } from "@headlessui/react";
 
 import {
   ArrowNarrowLeftIcon,
   HomeIcon,
   SearchIcon,
-} from '@heroicons/react/solid'
+} from "@heroicons/react/solid";
 
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const user = {
-  name: 'Whitney Francis',
-  email: 'whitney@example.com',
+  name: "Whitney Francis",
+  email: "whitney@example.com",
   imageUrl:
-    'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-}
+    "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+};
 
 const navigation = [
-  { name: 'Dashboard', href: '#' },
-  { name: 'Jobs', href: '#' },
-  { name: 'Applicants', href: '#' },
-  { name: 'Company', href: '#' },
-]
+  { name: "Dashboard", href: "#" },
+  { name: "Jobs", href: "#" },
+  { name: "Applicants", href: "#" },
+  { name: "Company", href: "#" },
+];
 
 const breadcrumbs = [
-  { name: 'Jobs', href: '#', current: false },
-  { name: 'Front End Developer', href: '#', current: false },
-  { name: 'Applicants', href: '#', current: true },
-]
+  { name: "Jobs", href: "#", current: false },
+  { name: "Front End Developer", href: "#", current: false },
+  { name: "Applicants", href: "#", current: true },
+];
 
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
+  { name: "Your Profile", href: "#" },
+  { name: "Settings", href: "#" },
+  { name: "Sign out", href: "#" },
+];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export function Header() {
@@ -54,9 +54,16 @@ export function Header() {
                 />
               </a>
             </div>
-            <nav aria-label="Global" className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4">
+            <nav
+              aria-label="Global"
+              className="hidden lg:ml-6 lg:flex lg:items-center lg:space-x-4"
+            >
               {navigation.map((item) => (
-                <a key={item.name} href={item.href} className="px-3 py-2 text-gray-900 text-sm font-medium">
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="px-3 py-2 text-gray-900 text-sm font-medium"
+                >
                   {item.name}
                 </a>
               ))}
@@ -73,11 +80,15 @@ export function Header() {
 
             <div className="bg-white ml-4 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
               <span className="sr-only">Open user menu</span>
-              <img className="h-8 w-8 rounded-full" src={user.imageUrl} alt="" />
+              <img
+                className="h-8 w-8 rounded-full"
+                src={user.imageUrl}
+                alt=""
+              />
             </div>
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

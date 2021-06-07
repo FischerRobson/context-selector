@@ -1,17 +1,17 @@
-import faker from "faker"
-import { FormEvent } from "react"
-import { useChatMessages } from "../hooks/useChatMessages"
+import faker from "faker";
+import { FormEvent } from "react";
+import { useChatMessages } from "../hooks/useChatMessages";
 
 export function Chat() {
-  const { messages, onNewMessage } = useChatMessages()
+  const { messages, onNewMessage } = useChatMessages();
 
   function handleSendMessage(event: FormEvent) {
-    event.preventDefault()
+    event.preventDefault();
 
     onNewMessage({
-      author: 'Diego Fernandes',
+      author: "Robson Fischer",
       text: faker.lorem.paragraph(),
-    }) 
+    });
   }
 
   return (
@@ -54,7 +54,7 @@ export function Chat() {
                   rows={3}
                   className="shadow-sm block p-4 w-full focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md"
                   placeholder="Leave a message"
-                  defaultValue={''}
+                  defaultValue={""}
                 />
                 <div className="mt-3 flex justify-end">
                   <button
@@ -70,5 +70,5 @@ export function Chat() {
         </div>
       </div>
     </section>
-  )
+  );
 }

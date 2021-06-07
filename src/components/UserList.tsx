@@ -1,12 +1,15 @@
 import { PlusIcon } from "@heroicons/react/solid";
-import faker from 'faker';
+import faker from "faker";
 import { useUserList } from "../hooks/useUserList";
 
 export function UserList() {
-  const { connected, onUserConnected } = useUserList()
+  const { connected, onUserConnected } = useUserList();
 
   return (
-    <section aria-labelledby="timeline-title" className="lg:col-start-3 lg:col-span-1">
+    <section
+      aria-labelledby="timeline-title"
+      className="lg:col-start-3 lg:col-span-1"
+    >
       <div className="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
         <h2 id="timeline-title" className="text-lg font-medium text-gray-900">
           User list
@@ -15,12 +18,23 @@ export function UserList() {
         {/* Activity Feed */}
         <div className="mt-6 flow-root">
           <ul className="mt-2 border-t border-b border-gray-200 divide-y divide-gray-200">
-            {connected.map(user => {
+            {connected.map((user) => {
               return (
-                <li key={user.id} className="py-3 flex justify-between items-center">
+                <li
+                  key={user.id}
+                  className="py-3 flex justify-between items-center"
+                >
                   <div className="flex items-center">
-                    <img src={`https://ui-avatars.com/api/?name=${encodeURI(user.name)}`} alt="" className="w-8 h-8 rounded-full" />
-                    <p className="ml-4 text-sm font-medium text-gray-900">{user.name}</p>
+                    <img
+                      src={`https://ui-avatars.com/api/?name=${encodeURI(
+                        user.name
+                      )}`}
+                      alt=""
+                      className="w-8 h-8 rounded-full"
+                    />
+                    <p className="ml-4 text-sm font-medium text-gray-900">
+                      {user.name}
+                    </p>
                   </div>
                   <button
                     type="button"
@@ -29,7 +43,7 @@ export function UserList() {
                     Remove<span className="sr-only"> {user.name}</span>
                   </button>
                 </li>
-              )
+              );
             })}
             <li className="py-2 flex justify-between items-center">
               <button
